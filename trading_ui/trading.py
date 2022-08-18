@@ -1,14 +1,13 @@
 from trading_functions import get_user_ticker, get_user_cash, get_current_closing_price
 from value_investing import run
 
-def trade_simulator():
+def trade_simulator(symbol):
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print("Hello, welcome to Zachary and Omeed's trading bot.") 
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 
-    ticker = get_user_ticker()
-    cash_one = get_user_cash()
-    cash_two = cash_one
+    ticker = get_user_ticker(symbol)
+
 
     # malleable, be smart with this value.
     number_of_desired_trades = 100
@@ -73,7 +72,3 @@ def build_trading_strategy(ticker):
         return "VALUE_INVESTING_DONE"
     else:
         return "N/A"
-
-
-
-trade_simulator()

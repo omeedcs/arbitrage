@@ -4,9 +4,9 @@ import yfinance as yf
 # using a user input, this will return a ticker object from the yahoo
 # finance API call. Further use of functions is neccesary to utilize 
 # the auto conversion of dataframes.
-def get_user_ticker():
-    ticker_input = input("Please input a stock ticker: ")
-    ticker = yf.Ticker(ticker_input)
+def get_user_ticker(symbol):
+    # ticker_input = input("Please input a stock ticker: ")
+    ticker = yf.Ticker(symbol)
     return ticker
 
 def get_user_cash():

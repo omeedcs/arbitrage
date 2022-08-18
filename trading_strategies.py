@@ -84,6 +84,7 @@ def get_current_price(symbol, cur_period):
     ticker = get_ticker(symbol)
     usc = ticker.history(period = cur_period)['Close'][0]
 
+
 def black_scholes_calc(S, K, T, r, sigma, option = 'call'): 
 	#S: Current Stock Price
     #K: Strike price
