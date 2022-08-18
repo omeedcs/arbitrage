@@ -37,7 +37,7 @@ def calc_market_value(symbol):
 # calculate p/b ratio
 def pb_ratio(symbol):
     pb = calc_market_value(symbol) / calc_book_value(symbol)
-    print(f"The P/B ratio for {symbol} is {pb}")
+    print(f"The P/B ratio for {symbol} is {pb}") 
     return pb
 
 def get_list_of_symbols():
