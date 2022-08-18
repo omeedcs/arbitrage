@@ -37,7 +37,7 @@ def calc_market_value(symbol):
 # calculate p/b ratio
 def pb_ratio(symbol):
     pb = calc_market_value(symbol) / calc_book_value(symbol)
-    print(f"The P/B ratio for {symbol} is {pb}") 
+    print(f"The P/B ratio for {symbol} is {pb}")
     return pb
 
 def get_list_of_symbols():
@@ -51,21 +51,9 @@ def find_under_valued_stocks(symbols):
             uv_stocks.append(symbol)
     return uv_stocks
 
-def run():
-    print("Value Investing Algorithm")
-    decision = input("Enter 1 for custom tickers, or enter 2 for our database: ")
-    if (float(decision) == 1):
-        symbols = []
-        while (True):
-            cur_symbol = input("Enter a ticker: ")
-            symbols.append(cur_symbol)
-            check_break = input("Input Y for continue, N for calculation: ")
-            if (check_break == "N"):
-                break
-        print("Now loading P/B ratios..")
-        print(find_under_valued_stocks(symbols))
-    elif(float(decision) == 2): 
-        # pseudo database.
-        symbols = ["A", "AA", "AAC", "AACG"]
-        print("Now loading P/B ratios..")
-        print(find_under_valued_stocks(symbols))
+symbols = ["A", "AA", "AAC", "AACG"]
+print(find_under_valued_stocks(symbols))
+
+    
+
+
