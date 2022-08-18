@@ -1,9 +1,11 @@
 from trading_functions import get_user_ticker, get_user_cash, get_current_closing_price
+from value_investing import run
 
 def trade_simulator():
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print("Hello, welcome to Zachary and Omeed's trading bot.") 
     print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
     ticker = get_user_ticker()
     cash_one = get_user_cash()
     cash_two = cash_one
@@ -12,9 +14,12 @@ def trade_simulator():
     number_of_desired_trades = 100
 
     # establish a simple desired strategy here.
+    
     result = build_trading_strategy(ticker) 
     if (result == "N/A"):
         print("Trading strategy build failed.")
+        return
+    if (result == "VALUE_INVESTING_DONE"):
         return
     
     print("Now implementing strategy and simulating trade, please wait...")
@@ -46,11 +51,11 @@ def build_trading_strategy(ticker):
         print("Found. Recent closing price of ticker is:", recent_closing_price)
     except:
         print("Error. Could not find recent closing price. Error with YF.")
-
+    
     print()
     print("What trading strategy would you like to simulate from the options below...")
     print("1 - Recent Price Strategy")
-    print("2 - TBD Strategy")
+    print("2 - Value Investing Strategy" ) 
     print("3 - TBD Strategy")
     selected_trading_strategy = input("Enter: ")
     print()
@@ -63,8 +68,11 @@ def build_trading_strategy(ticker):
         day30_ticker_price = get_current_closing_price(ticker, str(30) + "d")
         difference = day30_ticker_price - day1_ticker_price
         return difference
-    
-    return "N/A"
+    elif (float(selected_trading_strategy) == 2):
+        run()
+        return "VALUE_INVESTING_DONE"
+    else:
+        return "N/A"
 
 
 
