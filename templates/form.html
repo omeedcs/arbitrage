@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <h1>Symbol Analysis</h1>
+        <form method="POST">
+            <div class="form__fieldset">
+                <label for="symbol" class="form_label">Symbol:</label>
+                <input type="symbol" name="symbol" id="symbol" class="form__input">
+            </div>
+
+            <div class="form__fieldset">
+                <label for="decision" class="form_label">Enter 1 for custom tickers, or enter 2 for our database:</label>
+                <input type="decision" name="decision" id="decision" class="form__input">
+            </div>
+
+            <div class="form__fieldset">
+                <input class="form__submit form__input" type="submit" value="Get Analysis">
+            </div>
+
+            <!-- Outputting results -->
+            <div class="form__fieldset">
+                <label for="pbratio" class="form_label">PB ratio</label>
+                <text> {{ dataToRender }}</text>
+            </div>
+
+        </form>
+    </body>
+</html>
