@@ -14,8 +14,8 @@ def index():
       calculations = []
       pb_output = value_investing.pb_ratio(usr_symbol)
       
-      return render_template("form.html", dataToRender=pb_output)
-
+      return render_template("index.html", dataToRender = pb_output)
+      
    # print(usr_symbol)
    # print(usr_decision)
 
@@ -26,4 +26,4 @@ def index():
    # if usr_symbol.filename != '': 
    # pb_ratio = value_investing.pb_ratio(usr_symbol)
 
-   return render_template("form.html")
+   return render_template("index.html")

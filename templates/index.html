@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+
+
+<title>YFinance Stock Analyzer</title>
+
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      if (navigator.serviceWorker.controller) {
+        console.log("[Alok Prateek - Main] active service worker found, no need to register");
+      } else {
+        // Register the service worker
+        navigator.serviceWorker
+          .register("pwabuilder-sw.js", {
+            scope: "./"
+          })
+          .then(function (reg) {
+            console.log("[Alok Prateek - Main] Service worker has been registered for scope: " + reg.scope);
+          });
+      }
+    }
+  </script>
+  <script>
+    document.documentElement.className = 'js';
+  </script>
+<style>
+
+.qwd img {
+    border-radius: 100%;
+    display: block;
+    width: 100%;
+}
+</style>
+
+<body itemscope itemtype="https://schema.org/Person">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main-dist.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/reset.css') }}">
+
+  <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/pageclip.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/print.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/reset-dist.css') }}">
+  
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/reset.css') }}"> -->
+
+  <!-- <link rel="stylesheet" type="text/css" href="/styles/main-dist.css" />
+  <link rel="stylesheet" type="text/css" href="/styles/reset-dist.css" />
+  <link rel="stylesheet" type="text/css" href="styles/main.css" /> -->
+
+  <!--<link rel="stylesheet" type="text/css" href="../assets/css/googlefonts.css" />-->
+  <!--<link rel="stylesheet" type="text/css" href="../assets/vendor/font-awesome/css/font-awesome.min.css" />-->
+  <!--<link rel="stylesheet" type="text/css" href="assets/vendor/devicons/css/devicons.min.css" >-->
+</body>
+
+  <noscript>
+    <h4>&nbsp;&nbsp;JavaScript has been disabled in your browser. The site may NOT display correctly.</h4>
+  </noscript>
+  <!-- Header Begin-->
+  <section id="header">
+    <header main-wrap>
+      <div class="qwd">
+        <!-- <img src="images/avatar2.png" alt="My Ugly Photo" itemprop="image" /> -->
+      </div>
+      <br>
+      <h1 id="logo" itemprop="name">YFinance Stock Analyzer</h1>
+      <br>
+      <p >Ticker data to financial analysis made simple.</p>
+    </header>
+
+    <nav id="nav">
+      <ul>
+        <li><a href="#one">About Tool</a></li>
+        <li><a href="#two">Value Investing</a></li>
+        <li><a href="#three">Balance Sheet Analysis</a></li>
+        <li><a href="#four">Intrinsic Values</a></li>
+        <li><a href="#five">Sources</a></li>
+      </ul>
+    </nav>
+
+  </section>
+  <!--Header End-->
+  <!-- Wrapper Begin-->
+  <div id="wrapper">
+    <!-- Main -->
+    
+    <div id="main">
+
+    
+
+      <!-- One -->  
+      <section id="one">
+        <div class="container">
+          <h2 class="red"><i class="fa fa-comments fa-lg notred"></i>&nbsp;&nbsp;What is this tool?</h3>
+            <div>
+              <br>
+              <p class="black"><i class="fa fa-comments fa-lg notred"></i>&nbsp;&nbsp;Place information here. </p>
+
+         </div>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+  </section>
+
+
+      <section id="two">
+        <div class="container">
+          <h2 class="red"><i class="fa fa-comments fa-lg notred"></i>&nbsp;&nbsp;Value Investing Analysis</h3>
+            <div>
+              <body>
+                <h1>Symbol Analysis</h1>
+                <form method="POST">
+                    <div class="form__fieldset">
+                        <label for="symbol" class="form_label">&nbsp;&nbsp; <h2>Please enter a valid symbol below:</h2></label>
+                        <p>&nbsp;&nbsp; Please note that this symbol can be across multiple exchanges, and is not limited to the NYSE (New York Stock Exchange). </p>
+                        <p>&nbsp;&nbsp; Once you press "Get Analysis", please wait for the calculation to complete and page to render.</p>
+                       <br>
+                        <input type="symbol" name="symbol" id="symbol" class="form__input">
+                    </div>
+        
+                    <!-- <div class="form__fieldset">
+                        <label for="decision" class="form_label">Enter 1 for custom tickers, or enter 2 for our database:</label>
+                        <input type="decision" name="decision" id="decision" class="form__input">
+                    </div> -->
+                    <p></p>
+ 
+                    <div class="form__fieldset">
+                        <input class="form__submit form__input" type="submit" value="Get Analysis">
+                      
+                    </div>
+                    <br>
+                    
+
+                    <!-- Outputting results -->
+                    <div class="form__fieldset">
+                        <label for="pbratio" class="form_label"><h1>P/B Ratio:</h1></label>
+                        <text> {{ dataToRender }}</text>
+                    </div>
+                    <h2>What does this data mean?</h2>
+                    <p>This is the price to booking ratio. It compares the market cap value to its booking value. If the ratio is under 3.0, then the stock is likely undervalued, and could be one of many indicators that it might be a good buy for you. Companies like AAPL (Apple) or MSFT (Microsoft), likely will not be undervalued, but could still be good investments for the long term, so solely utilizing P/B ratio as an investment strategy might not be a good choice in some cases. </p>
+                </form>
+            </body>
+
+         </div>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+  </section>
+
+      <!-- Two -->
+      <section id="three">
+        <div class="container">
+          <h2 class="red"><i class="fa fa-user fa-lg notred"></i>&nbsp;&nbsp;Balance Sheet Analysis</h2>
+
+          <p>Information and embed here.</p>
+           
+
+        </div>
+      </section>
+    <hr>
+      <!-- Four -->
+      <section id="four">
+        <div class="container">
+          <h2 class="red"><i class="fa fa-user fa-lg notred"></i>&nbsp;&nbsp;Intrinsic Values</h2>
+
+          <p>Information and embed here.</p>
+           
+
+        </div>
+      </section>
+    
+      <section id="four">
+        <div class="container">
+          <h2 class="red"><i class="fa fa-user fa-lg notred"></i>&nbsp;&nbsp;Sources</h2>
+
+          <p>Information and embed here.</p>
+           
+
+        </div>
+      </section>
+    <hr>
+
+
+  </div>
+  </div>
+  <!--Wrapper End -->
+  <!--Search Begin -->
+
+  <!--fab begin-->
+  <ul id="menu" class="mfb-component--bl   mfb-slidein-spring " data-mfb-toggle="click" style="display: block;">
+    <li class="mfb-component__wrap">
+      <a href="#" class="mfb-component__button--main" aria-label="Main material button to open or close a menu">
+        <i class="mfb-component__main-icon--resting fa fa-plus"></i>
+        <i class="mfb-component__main-icon--active fa fa-close"></i>
+      </a>
+
+     
+  <!--fab-end-->
+  <!-- Scripts -->
+  <!--Vendor Scripts-->
+  <script src="assets/vendor/jquery/jquery-1.12.3.min.js"></script>
+  <script src="assets/vendor/jquery/jquery.scrollzer.min.js"></script>
+  <script src="assets/vendor/jquery/jquery.scrolly.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+
+  <script src="https://s.pageclip.co/v1/pageclip.js"></script>
+  <script>
+    var form = document.querySelector('.pageclip-form')
+    Pageclip.form(form, {
+      successTemplate: '<div class="pageclip-form__success__message"><p><i class="fa fa-smile-o"></i></p><p>Thank you&#33;</p><p>I&#39;ll contact you shortly by email.<br><br>Please check your inbox in a day&#33;</p></div>'
+    })
+  </script>
+
+
+  <!--My Scripts-->
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script async src="assets/js/storescroll.js"></script>
+  <!--<script async src="assets/js/search.js"></script>-->
+  <script src="assets/vendor/fab/fab.min.js"></script>
+
+  <!--Scripts For Google-->
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-85177250-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</html>
