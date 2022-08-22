@@ -1,3 +1,4 @@
+import yfinance as yf
 import balance_sheet_metrics
 
 def analyzeLiquidityRatios(ticker):
@@ -48,5 +49,18 @@ def analyzeFinancialLeverageRatio(ticker):
     if (debtAssetsRatioFloat <= DEBT_ASSET_RATIO_THRESHOLD) and (financialLeverageRatioFloat <= FINANCIAL_LEVERAGE_RATIO):
         analysis_str = "Good"
     else: 
-        analysis_str = "Bad" # TODO - need to add a depends block
+        analysis_str = "Poor" # TODO - need to add a depends block
     return f"The Financial Leverage Ratios are: {analysis_str}"
+
+msft = yf.Ticker("MSFT")
+def main():
+    stocks = ["MSFT", "TSLA", "GOOG", "AMZN", "AAPL"]
+    for stock in stocks:
+        stock_ticker = yf.Ticker(stock)
+        print(stock + " Information")
+        print(analyzeLiquidityRatios(stock_ticker))
+        print(analyzeSolvencyRatios(stock_ticker))
+        print(analyzeFinancialLeverageRatio(stock_ticker))
+        print()
+
+main()
