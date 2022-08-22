@@ -52,15 +52,17 @@ def analyzeFinancialLeverageRatio(ticker):
         analysis_str = "Poor" # TODO - need to add a depends block
     return f"The Financial Leverage Ratios are: {analysis_str}"
 
-msft = yf.Ticker("MSFT")
-def main():
-    stocks = ["MSFT", "TSLA", "GOOG", "AMZN", "AAPL"]
-    for stock in stocks:
-        stock_ticker = yf.Ticker(stock)
-        print(stock + " Information")
-        print(analyzeLiquidityRatios(stock_ticker))
-        print(analyzeSolvencyRatios(stock_ticker))
-        print(analyzeFinancialLeverageRatio(stock_ticker))
-        print()
+# testing:
 
-main()
+# msft = yf.Ticker("MSFT")
+# def main():
+#     stocks = ["COP", "GGB", "AAPL", "MSFT", "JVOI"]
+#     for stock in stocks:
+#         stock_ticker = yf.Ticker(stock)
+#         print(stock + " Information")
+#         print(analyzeLiquidityRatios(stock_ticker))
+#         print(analyzeSolvencyRatios(stock_ticker))
+#         print(analyzeFinancialLeverageRatio(stock_ticker))
+#         print()
+
+# main()

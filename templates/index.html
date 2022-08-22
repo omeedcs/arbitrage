@@ -96,7 +96,7 @@
           <h2 class="red"><i class="fa fa-comments fa-lg notred"></i>&nbsp;&nbsp;What is this tool?</h3>
             <div>
               <br>
-              <p class="black"><i class="fa fa-comments fa-lg notred"></i>&nbsp;&nbsp;Place information here. </p>
+              <p class="black"><i class="fa fa-comments fa-lg notred"></i>&nbsp;By utilizing Python, Yahoo Finance API and Flask... this tool applies financial market theory and mathematical analysis to give statistics on stock tickers across multiple exchanges, including the NYSE. For example, you could input "APPL", which represents Apple corporation. </p>
 
          </div>
          <br>
@@ -122,7 +122,7 @@
                        <br>
                         <input type="symbol" name="symbol" id="symbol" class="form__input">
                     </div>
-        
+                    
                     <!-- <div class="form__fieldset">
                         <label for="decision" class="form_label">Enter 1 for custom tickers, or enter 2 for our database:</label>
                         <input type="decision" name="decision" id="decision" class="form__input">
@@ -138,14 +138,16 @@
 
                     <!-- Outputting results -->
                     <div class="form__fieldset">
+                      <br>
                         <label for="pbratio" class="form_label"><h1>P/B Ratio:</h1></label>
-                        <text> {{ dataToRender }}</text>
+                        <text> {{ pb }}</text>
+                        <br>
                     </div>
+                    <br>
                     <h2>What does this data mean?</h2>
                     <p>This is the price to booking ratio. It compares the market cap value to its booking value. If the ratio is under 3.0, then the stock is likely undervalued, and could be one of many indicators that it might be a good buy for you. Companies like AAPL (Apple) or MSFT (Microsoft), likely will not be undervalued, but could still be good investments for the long term, so solely utilizing P/B ratio as an investment strategy might not be a good choice in some cases. </p>
                 </form>
             </body>
-
          </div>
          <br>
          <br>
@@ -160,7 +162,55 @@
         <div class="container">
           <h2 class="red"><i class="fa fa-user fa-lg notred"></i>&nbsp;&nbsp;Balance Sheet Analysis</h2>
 
-          <p>Information and embed here.</p>
+          <body>
+            <h1>Balance Sheet Analysis</h1>
+            <form method="POST">
+                <div class="form__fieldset">
+                    <label for="bs_symbol" class="form_label">&nbsp;&nbsp; <h2>Please enter a valid symbol below:</h2></label>
+                    <p>&nbsp;&nbsp; Please note that this symbol can be across multiple exchanges, and is not limited to the NYSE (New York Stock Exchange). </p>
+                    <p>&nbsp;&nbsp; Once you press "Get Analysis", please wait for the calculation to complete and page to render.</p>
+                   <br>
+                    <input type="bs_symbol" name="bs_symbol" id="bs_symbol" class="form__input">
+                </div>
+                
+                <!-- <div class="form__fieldset">
+                    <label for="decision" class="form_label">Enter 1 for custom tickers, or enter 2 for our database:</label>
+                    <input type="decision" name="decision" id="decision" class="form__input">
+                </div> -->
+                <p></p>
+
+                <div class="form__fieldset">
+                    <input class="form__submit form__input" type="submit" value="Get Analysis">
+                  
+                </div>
+                <br>
+                
+
+                <!-- Outputting results -->
+                <div class="form__fieldset">
+                  <br>
+                    <label for="BalanceSheetAnalysis" class="form_label"><h1>Balance Sheet Analysis</h1></label>
+
+                    <table>
+                      <tr>
+                        <th>Financial Leverage Ratio</th>
+                        <th>Liquidity Ratios</th>
+                        <th>Solvency Ratios</th>
+                      </tr>
+                      <tr>
+                        <td>{{ flr }}</td>
+                        <td>{{ lr }}</td>
+                        <td>{{ sr }}</td>
+                      </tr>
+                    </table>
+
+                    <br>
+                </div>
+                <br>
+                <h2>What does this data mean?</h2>
+                <!-- <p>This is the price to booking ratio. It compares the market cap value to its booking value. If the ratio is under 3.0, then the stock is likely undervalued, and could be one of many indicators that it might be a good buy for you. Companies like AAPL (Apple) or MSFT (Microsoft), likely will not be undervalued, but could still be good investments for the long term, so solely utilizing P/B ratio as an investment strategy might not be a good choice in some cases. </p> -->
+            </form>
+        </body>
            
 
         </div>
@@ -182,6 +232,12 @@
           <h2 class="red"><i class="fa fa-user fa-lg notred"></i>&nbsp;&nbsp;Sources</h2>
 
           <p>Information and embed here.</p>
+          <ul>
+            <li>Investopedia</li>
+            <li>Balance Sheet Numbers</li>
+            <li>YFinance</li>
+            <li></li>
+          </ul>
            
 
         </div>

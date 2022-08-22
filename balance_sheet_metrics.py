@@ -5,7 +5,7 @@ import yfinance as yf
 # Liquidity Ratios
 def quick_ratio(ticker):
     current_assets = ticker.balancesheet.loc["Total Current Assets"][0]
-    inventory = ticker.balancesheet.loc["Total Current Assets"][0]
+    inventory = ticker.balancesheet.loc["Inventory"][0]
     current_liabilities = ticker.balancesheet.loc["Total Current Liabilities"][0]
     return (current_assets - inventory) / current_liabilities
 
@@ -40,7 +40,7 @@ def solvency_ratio(ticker):
     return solvency_ratio
 
 # financial leverage ratios
-def debt_capital_ratio():
+def debt_capital_ratio(ticker):
     # couldn't find data on yfinance
     pass
 
