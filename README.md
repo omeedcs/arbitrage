@@ -1,10 +1,9 @@
+## YFinance Stock Analyzer
 
+#### Architecture Diagram
 
-https://www.investopedia.com/terms/r/risk-freerate.asp#:~:text=To%20calculate%20the%20real%20risk,bond%20matching%20your%20investment%20duration.
+<img width="1258" alt="Screen Shot 2022-08-22 at 12 44 17 PM" src="https://user-images.githubusercontent.com/61725820/185985418-81a3dc1f-1815-4061-b94e-c9f620b57ccc.png">
 
+#### Task Bar Features
 
-Intrinsic Value:
-  - Formula: https://www.investopedia.com/articles/optioninvestor/07/options_beat_market.asp
-  - Code: https://analyzingalpha.com/yfinance-python#Get_yfinance_Options_Call_Data
-
-
+<img width="712" alt="Screen Shot 2022-08-22 at 12 32 53 PM" src="https://user-images.githubusercontent.com/61725820/185983533-483513a3-0b1f-4224-a6fd-3ae49ea8d4a5.png">
